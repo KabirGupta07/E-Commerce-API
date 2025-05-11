@@ -3,7 +3,7 @@ const Product = require("../models/Product")
 const {
     verifyTokenAndAuthorization,
     verifyTokenAndAdmin
-} = require("./verifyToken");
+} = require("../utils/middlewares/verifyToken");
 
 
 //CREATE

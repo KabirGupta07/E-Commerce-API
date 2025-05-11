@@ -1,14 +1,22 @@
+const dotenv = require("dotenv");
+
+let NODE_ENV = process.env.NODE_ENV || 'development';
+let envFilePath = `.env.${NODE_ENV}`;
+dotenv.config({ path: envFilePath });
+
+console.log(`NODE_ENV: ${NODE_ENV}`);
+
 const express = require("express");
 const app = express();
+
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+
+// ROUTES
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const orderRoute = require("./routes/order");
 const cartRoute = require("./routes/cart");
-
-dotenv.config();
 
 mongoose
     .connect(process.env.MONGO_URL)
@@ -27,6 +35,9 @@ app.use("/api/products", productRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/carts", cartRoute);
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Backend Server runnning!");
+
+let PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Backend Server runnning on PORT ${PORT}`);
 })

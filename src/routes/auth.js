@@ -1,10 +1,13 @@
 const router = require("express").Router()
-const User = require("../models/User")
-const CryptoJS = require("crypto-js")
-const dotenv = require("dotenv")
-const jwt = require("jsonwebtoken")
 
+const dotenv = require("dotenv")
+
+const CryptoJS = require("crypto-js")
+const jwt = require("jsonwebtoken")
+const User = require("../models/User")
 dotenv.config()
+
+
 //REGISTER
 router.post("/register", async (req, res) => {
     const newUser = new User({

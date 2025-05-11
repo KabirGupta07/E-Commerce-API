@@ -1,0 +1,11 @@
+# NODE MODULES
+node_modules
+
+# LOCK FILES
+pnpm-lock.yaml
+
+# BUILDs
+dist 
+
+# MISCELLANEOUS
+nodemon.json

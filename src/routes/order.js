@@ -4,7 +4,7 @@ const Order = require("../models/Order")
 const {
     verifyTokenAndAuthorization,
     verifyTokenAndAdmin
-} = require("./verifyToken");
+} = require("../utils/middlewares/verifyToken");
 
 //CREATE
 router.post("/", verifyTokenAndAuthorization, async (req, res) => {

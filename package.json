@@ -4,19 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "build": "webpack --config webpack.config.js",
+    "start:dev": "NODE_ENV=development & node src/index.js",
+    "start:staging": "NODE_ENV=development & node src/index.js",
+    "start:prod": "NODE_ENV=development & node src/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "crypto-js": "^4.1.1",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "googleapis": "^103.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.4",
-    "nodemailer": "^6.7.5",
-    "nodemon": "^2.0.16",
-    "stripe": "^9.4.0"
+    "colorette": "^2.0.20",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "googleapis": "^148.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.2",
+    "nodemailer": "^7.0.3",
+    "nodemon": "^3.1.10",
+    "stripe": "^18.1.0",
+    "webpack": "^5.99.8",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
   }
 }
