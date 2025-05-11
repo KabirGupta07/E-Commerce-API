@@ -1,0 +1,13 @@
+{
+  "level": "debug",
+  "transports": {
+    "console": {
+      "level": "silly",
+      "colorize": true
+    },
+    "file": {
+      "level": "error",
+      "filename": "logs/app.log"
+    }
+  }
+}

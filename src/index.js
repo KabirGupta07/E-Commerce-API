@@ -1,5 +1,9 @@
 const dotenv = require("dotenv");
 
+const Logger = require('./utils/logger');
+
+const logger = new Logger('BACKEND');
+
 let NODE_ENV = process.env.NODE_ENV || 'development';
 let envFilePath = `.env.${NODE_ENV}`;
 dotenv.config({ path: envFilePath });
@@ -39,5 +43,9 @@ app.use("/api/carts", cartRoute);
 let PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log(`Backend Server runnning on PORT ${PORT}`);
+    logger.silly('This is a silly log');
+    logger.debug('This is a debug log');
+    logger.verbose('This is a verbose log');
+    logger.info('This is an info log');
+    logger.info(`Backend Server runnning on PORT ${PORT}`);
 })
